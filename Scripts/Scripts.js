@@ -1,18 +1,18 @@
-let geeseController = new ScrollMagic.Controller();
+const geeseController = new ScrollMagic.Controller();
 
-let headerPin = new ScrollMagic.Scene({
-    triggerElement: '.buffer',
+/*const headerPin = new ScrollMagic.Scene({
+    triggerElement: '.geese-navigation',
     triggerHook: 0.3
 })
-    .setPin('.geese-header', { pushFollowers: false })
-    .addTo(geeseController);
+    .setPin('.geese-navigation', { pushFollowers: false })
+    .addTo(geeseController);*/
 
-let headerParallax = new ScrollMagic.Scene(
+const headerParallax = new ScrollMagic.Scene(
     {
-        triggerElement: '.buffer2',
-        triggerHook: .5,
-        duration: '200%'
+        triggerElement: '.geese-header',
+        triggerHook: 0,
+        duration: '100%'
     })
-    .setTween(TweenMax.from('.header-background', 1, { y: '-65%', ease: Power0.easeNone }))
+    .setTween(TweenMax.from('.header-background', 1, { y: '-25%', ease: Power0.easeNone }))
     .addIndicators()
     .addTo(geeseController);
