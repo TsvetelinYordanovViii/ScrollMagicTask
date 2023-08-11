@@ -9,12 +9,13 @@ body {
     height: 30vh;
     color: white;
     font-size: 2.5rem;
+    overflow: hidden;
 
 
     .header-background {
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: 400%;
         background: url('Images/greylag-goose-63088_1280.jpg') no-repeat;
         background-size: cover;
     }
@@ -30,7 +31,8 @@ body {
 }
 
 .buffer,
-.bufferTwo {
+.buffer2,
+.buffer3 {
     width: 100%;
-    height: 80vh;
+    height: 120vh;
 }

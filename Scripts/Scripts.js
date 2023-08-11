@@ -7,7 +7,12 @@ let headerPin = new ScrollMagic.Scene({
     .setPin('.geese-header', { pushFollowers: false })
     .addTo(geeseController);
 
-new ScrollMagic.Scene({ triggerElement: ".geese-header" })
-    .setTween(".geese-header", { y: "80%", ease: Linear.easeNone })
+let headerParallax = new ScrollMagic.Scene(
+    {
+        triggerElement: '.buffer2',
+        triggerHook: .5,
+        duration: '200%'
+    })
+    .setTween(TweenMax.from('.header-background', 1, { y: '-65%', ease: Power0.easeNone }))
     .addIndicators()
     .addTo(geeseController);
