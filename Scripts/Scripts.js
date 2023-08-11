@@ -17,4 +17,35 @@ const headerParallax = new ScrollMagic.Scene(
     .addIndicators()
     .addTo(geeseController);
 
-$('.geese-image-container');
+
+let alternatingDirection = 1;
+let verticalOrHorizontalDirection = 0;
+$('.geese-image-container').each((k, container) => {
+    if (verticalOrHorizontalDirection === 0) {
+        new ScrollMagic.Scene({
+            triggerElement: container,
+            triggerHook: .8,
+            duration: '100%'
+        })
+            .setTween(TweenMax.from(container, 1, {
+                x: (alternatingDirection * (-15)) + '%',
+                opacity: 0,
+                ease: Power0.ease
+            })).addTo(geeseController)
+        verticalOrHorizontalDirection = 1;
+    }
+    else {
+        new ScrollMagic.Scene({
+            triggerElement: container,
+            triggerHook: .8,
+            duration: '100%'
+        })
+            .setTween(TweenMax.from(container, 1, {
+                y: alternatingDirection * (-15) + '%',
+                opacity: 0,
+                ease: Power0.ease
+            })).addTo(geeseController)
+        verticalOrHorizontalDirection = 0;
+        alternatingDirection = alternatingDirection / -1;
+    }
+});
