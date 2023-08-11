@@ -15,8 +15,7 @@ body {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-image: url('Images/greylag-goose-63088_1280.jpg');
-        background-repeat: no-repeat;
+        background: url('Images/greylag-goose-63088_1280.jpg') no-repeat;
         background-size: cover;
     }
 
@@ -28,4 +27,10 @@ body {
         padding: 0rem 10rem;
         font-family: 'Bricolage Grotesque', sans-serif;
     }
+}
+
+.buffer,
+.bufferTwo {
+    width: 100%;
+    height: 80vh;
 }

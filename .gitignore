@@ -1,5 +1,7 @@
 jquery-3.7.0-min.js
 ScrollMagic.min.js
+ScrollMagicPlugins
+gsap
 Styles.css
 Styles.css.map
 Images
