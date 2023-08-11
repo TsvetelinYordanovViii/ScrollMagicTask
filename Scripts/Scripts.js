@@ -16,3 +16,5 @@ const headerParallax = new ScrollMagic.Scene(
     .setTween(TweenMax.from('.header-background', 1, { y: '-25%', ease: Power0.easeNone }))
     .addIndicators()
     .addTo(geeseController);
+
+$('.geese-image-container');
