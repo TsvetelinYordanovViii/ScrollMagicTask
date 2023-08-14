@@ -83,7 +83,7 @@ body {
 .geese-text {
     margin: 0rem 16rem 90rem;
     text-align: center;
-    color: black;
+    color: $backgroundColor;
 
     p {
         text-align: justify;
@@ -93,15 +93,14 @@ body {
     When changing the background image's width and with repeat set to none,
     the background image will cover the text letter by letter.*/
 
-
     .cover {
-        background-image: linear-gradient(black, black);
+        background-image: linear-gradient($backgroundColor, $backgroundColor);
         background-size: 100% 100%;
         background-repeat: no-repeat;
     }
 
     .reveal {
-        background-image: linear-gradient($backgroundColor, $backgroundColor);
+        background-image: linear-gradient(skyblue, skyblue);
         background-size: 0% 100%;
         background-repeat: no-repeat;
     }

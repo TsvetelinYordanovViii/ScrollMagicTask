@@ -43,7 +43,6 @@ $('.geese-image-container').each((k, container) => {
 });
 
 
-
 let navigationPin = new ScrollMagic.Scene({
     triggerElement: '.geese-navigation',
     triggerHook: 0
@@ -77,6 +76,7 @@ navigationPin = new ScrollMagic.Scene({
             x: '10%'
         })
     .addTo(geeseController);
+
 
 
 let geeseText = new ScrollMagic.Scene({
