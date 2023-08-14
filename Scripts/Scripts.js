@@ -60,7 +60,7 @@ navigationPin = new ScrollMagic.Scene({
         '.geese-navigation',
         1,
         {
-            backgroundColor: 'cyan',
+            backgroundColor: '#87ceeb',
             height: '3.5rem'
         })
     .addTo(geeseController);
@@ -79,15 +79,29 @@ navigationPin = new ScrollMagic.Scene({
     .addTo(geeseController);
 
 
-const geeseText = new ScrollMagic.Scene({
+let geeseText = new ScrollMagic.Scene({
     triggerElement: '.geese-text',
     triggerHook: .5
 })
     .setTween(
-        '.geese-paragraph',
+        '.geese-paragraph .reveal',
+        5,
+        {
+            backgroundSize: '100% 100%',
+            ease: Power0.easeNone
+        })
+    .addTo(geeseController);
+
+
+geeseText = new ScrollMagic.Scene({
+    triggerElement: '.geese-text',
+    triggerHook: .5
+})
+    .setTween(
+        '.geese-text-header .reveal',
         1,
         {
-            backgroundSize: '0rem'
+            backgroundSize: '100% 100%',
+            ease: Power0.easeNone
         })
-    .addIndicators()
     .addTo(geeseController);
