@@ -149,31 +149,24 @@ const growingGoose = new ScrollMagic.Scene(
 
 
 const slideInImages = new TimelineMax().to(
-    '.carousel-image:nth-child(1)',
-    1,
-    {
-        x: '100%',
-        ease: Power0.easeNone
-    }
-).to(
     '.carousel-image:nth-child(2)',
     1,
     {
-        x: '100%',
+        x: '-175.05%',
         ease: Power0.easeNone
     }
 ).to(
     '.carousel-image:nth-child(3)',
     1,
     {
-        x: '100%',
+        x: '-175.05%',
         ease: Power0.easeNone
     }
 ).to(
     '.carousel-image:nth-child(4)',
     1,
     {
-        x: '100%',
+        x: '-175.05%',
         ease: Power0.easeNone
     }
 )
@@ -183,8 +176,8 @@ const carousel = new ScrollMagic.Scene(
     {
         triggerElement: '.gallery-carousel',
         triggerHook: 0,
-        duration: '200%',
+        duration: '500%',
     })
-    .setPin('.navigation-bar', { pushFollowers: true })
+    .setPin('.gallery-carousel', { pushFollowers: true })
     .setTween(slideInImages)
     .addTo(controller);
