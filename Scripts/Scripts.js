@@ -78,30 +78,57 @@ navigationPin = new ScrollMagic.Scene({
     .addTo(geeseController);
 
 
+const textAnimationTweenParagraph = new TimelineMax().to(
+    '.geese-paragraph .reveal',
+    5,
+    {
+        backgroundSize: '100% 100%',
+        ease: Power0.easeNone
+    }
+).to(
+    '.geese-paragraph .reveal',
+    1,
+    {
+        color: 'black',
+        ease: Power0.easeNone
+    }
+)
+
+const textAnimationTweenHeader = new TimelineMax().to(
+    '.geese-text-header .reveal',
+    1,
+    {
+        backgroundSize: '100% 100%',
+        ease: Power0.easeNone
+    }
+).to(
+    //From what I saw, there is no delay parameter here.
+    //This serves to add a delay when the reveal finishes and the text color change.
+    '.geese-text-header .reveal',
+    4,
+    {
+        ease: Power0.easeNone
+    }
+).to(
+    '.geese-text-header .reveal',
+    1,
+    {
+        color: 'black',
+        ease: Power0.easeNone
+    }
+)
 
 let geeseText = new ScrollMagic.Scene({
     triggerElement: '.geese-text',
     triggerHook: .5
 })
-    .setTween(
-        '.geese-paragraph .reveal',
-        5,
-        {
-            backgroundSize: '100% 100%',
-            ease: Power0.easeNone
-        })
+    .setTween(textAnimationTweenParagraph)
     .addTo(geeseController);
 
 
-geeseText = new ScrollMagic.Scene({
+let geeseHeader = new ScrollMagic.Scene({
     triggerElement: '.geese-text',
     triggerHook: .5
 })
-    .setTween(
-        '.geese-text-header .reveal',
-        1,
-        {
-            backgroundSize: '100% 100%',
-            ease: Power0.easeNone
-        })
+    .setTween(textAnimationTweenHeader)
     .addTo(geeseController);
