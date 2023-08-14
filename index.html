@@ -9,16 +9,16 @@
 </head>
 
 <body>
-    <nav class="geese-navigation">
-        <button class="geese-nav-button">About Us</button>
-        <button class="geese-nav-button">Geese</button>
-        <button class="geese-nav-button">More Geese</button>
-        <button class="geese-nav-button">Cooked Geese</button>
-        <button class="geese-nav-button">Ducks</button>
+    <nav class="navigation-bar">
+        <button class="nav-button">About Us</button>
+        <button class="nav-button">Geese</button>
+        <button class="nav-button">More Geese</button>
+        <button class="nav-button">Cooked Geese</button>
+        <button class="nav-button">Ducks</button>
     </nav>
-    <header class="geese-header">
-        <div class="header-background"></div>
-        <div class="header-title">
+    <header class="site-header">
+        <div class="site-header-background"></div>
+        <div class="site-header-title">
             <h1>GEESE!</h1>
         </div>
     </header>
@@ -40,11 +40,15 @@
         </picture>
     </section>
 
-    <section class="geese-text">
-        <h2 class="geese-text-header"><span class="reveal">Welcome to the Geese Site!</span>
+    <section class="site-description">
+        <h2 class="site-description-header">
+            <span class="reveal">
+                Welcome to the Geese Site!
+            </span>
         </h2>
-        <p class="geese-paragraph">
-            <span class="reveal">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        <p class="site-description-paragraph">
+            <span class="reveal">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Pariatur, saepe quisquam. Officiis
                 dignissimos
                 ducimus ea recusandae? Labore qui dolores beatae, temporibus dicta corrupti, sapiente expedita illum
@@ -54,19 +58,36 @@
                 sapiente deleniti voluptas incidunt at hic sit velit, quo illum tenetur harum recusandae a minus
                 perspiciatis quod dolor architecto obcaecati ex totam ipsa. Dolorum animi officia dolorem impedit
                 unde
-                praesentium, aperiam eum ipsam doloribus excepturi vero cum! Quod, tenetur!</span>
+                praesentium, aperiam eum ipsam doloribus excepturi vero cum! Quod, tenetur!
+            </span>
         </p>
     </section>
 
     <section class="goose-boxes">
-        <div class="goose-box"><img src="Styles/Images/goose-4056132_1280.jpg" alt="GOOSE!"></div>
+        <picture class="goose-box">
+            <img src="Styles/Images/goose-4056132_1280.jpg" alt="GOOSE!">
+        </picture>
     </section>
+
+    <section class="gallery-carousel">
+        <picture class="carouselImage">
+            <img src="Styles/Images/Carousel/bird-7921942_1280.jpg" alt="">
+        </picture>
+        <picture class="carouselImage">
+            <img src="Styles/Images/Carousel/canada-goose-3774859_1280.jpg" alt="">
+        </picture>
+        <picture class="carouselImage">
+            <img src="Styles/Images/Carousel/domestic-animal-4019872_1280.jpg" alt="">
+        </picture>
+        <picture class="carouselImage"><img src="Styles/Images/Carousel/goose-4334461_1280.jpg" alt="">
+        </picture>
+    </section>
+
     <script src="Scripts/Libraries/jquery-3.7.0-min.js"></script>
     <script src="Scripts/Libraries/gsap/minified/gsap.min.js"></script>
     <script src="Scripts/Libraries/ScrollMagic.min.js"></script>
     <script src="Scripts/Libraries/ScrollMagicPlugins/animation.gsap.js"></script>
     <script src="Scripts/Libraries/ScrollMagicPlugins/debug.addIndicators.js"></script>
-
     <script src="Scripts/Scripts.js"></script>
 </body>
 

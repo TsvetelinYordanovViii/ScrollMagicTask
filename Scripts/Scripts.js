@@ -1,13 +1,13 @@
-const geeseController = new ScrollMagic.Controller();
+const controller = new ScrollMagic.Controller();
 
 const headerParallax = new ScrollMagic.Scene(
     {
-        triggerElement: '.geese-header',
+        triggerElement: '.site-header',
         triggerHook: 0,
         duration: '100%'
     })
-    .setTween(TweenMax.from('.header-background', 1, { y: '-25%', ease: Power0.easeNone }))
-    .addTo(geeseController);
+    .setTween(TweenMax.from('.site-header-background', 1, { y: '-25%', ease: Power0.easeNone }))
+    .addTo(controller);
 
 
 let alternatingDirection = 1;
@@ -22,7 +22,7 @@ $('.geese-image-container').each((k, container) => {
                 x: (alternatingDirection * (-15)) + '%',
                 opacity: 0,
                 ease: Power0.ease
-            })).addTo(geeseController)
+            })).addTo(controller)
         verticalOrHorizontalDirection = 1;
     }
     else {
@@ -34,7 +34,7 @@ $('.geese-image-container').each((k, container) => {
                 y: alternatingDirection * (-15) + '%',
                 opacity: 0,
                 ease: Power0.ease
-            })).addTo(geeseController)
+            })).addTo(controller)
         verticalOrHorizontalDirection = 0;
         alternatingDirection = alternatingDirection / -1;
     }
@@ -42,11 +42,11 @@ $('.geese-image-container').each((k, container) => {
 
 
 let navigationPin = new ScrollMagic.Scene({
-    triggerElement: '.geese-navigation',
+    triggerElement: '.navigation-bar',
     triggerHook: 0
 })
-    .setPin('.geese-navigation', { pushFollowers: false })
-    .addTo(geeseController);
+    .setPin('.navigation-bar', { pushFollowers: false })
+    .addTo(controller);
 
 
 navigationPin = new ScrollMagic.Scene({
@@ -54,13 +54,13 @@ navigationPin = new ScrollMagic.Scene({
     triggerHook: 0
 })
     .setTween(
-        '.geese-navigation',
+        '.navigation-bar',
         1,
         {
             backgroundColor: '#87ceeb',
             height: '3.5rem'
         })
-    .addTo(geeseController);
+    .addTo(controller);
 
 
 navigationPin = new ScrollMagic.Scene({
@@ -68,23 +68,23 @@ navigationPin = new ScrollMagic.Scene({
     triggerHook: 0
 })
     .setTween(
-        '.geese-nav-button',
+        '.nav-button',
         1,
         {
             x: '10%'
         })
-    .addTo(geeseController);
+    .addTo(controller);
 
 
 const textAnimationTweenParagraph = new TimelineMax().to(
-    '.geese-paragraph .reveal',
+    '.site-description-paragraph .reveal',
     5,
     {
         backgroundSize: '100% 100%',
         ease: Power0.easeNone
     }
 ).to(
-    '.geese-paragraph .reveal',
+    '.site-description-paragraph .reveal',
     1,
     {
         color: 'black',
@@ -93,7 +93,7 @@ const textAnimationTweenParagraph = new TimelineMax().to(
 )
 
 const textAnimationTweenHeader = new TimelineMax().to(
-    '.geese-text-header .reveal',
+    '.site-description-header .reveal',
     1,
     {
         backgroundSize: '100% 100%',
@@ -102,13 +102,12 @@ const textAnimationTweenHeader = new TimelineMax().to(
 ).to(
     //From what I saw, there is no delay parameter here.
     //This serves to add a delay when the reveal finishes and the text color change.
-    '.geese-text-header .reveal',
+    '.site-description-header .reveal',
     4,
     {
-        ease: Power0.easeNone
     }
 ).to(
-    '.geese-text-header .reveal',
+    '.site-description-header .reveal',
     1,
     {
         color: 'black',
@@ -121,7 +120,7 @@ let geeseText = new ScrollMagic.Scene({
     triggerHook: .5
 })
     .setTween(textAnimationTweenParagraph)
-    .addTo(geeseController);
+    .addTo(controller);
 
 
 geeseText = new ScrollMagic.Scene({
@@ -129,7 +128,7 @@ geeseText = new ScrollMagic.Scene({
     triggerHook: .5
 })
     .setTween(textAnimationTweenHeader)
-    .addTo(geeseController);
+    .addTo(controller);
 
 
 
@@ -147,4 +146,4 @@ const scalingGoose = new ScrollMagic.Scene(
             ease: Power0.easeNone
         }))
     .addIndicators()
-    .addTo(geeseController);
+    .addTo(controller);
