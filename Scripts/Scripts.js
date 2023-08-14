@@ -1,12 +1,5 @@
 const geeseController = new ScrollMagic.Controller();
 
-/*const headerPin = new ScrollMagic.Scene({
-    triggerElement: '.geese-navigation',
-    triggerHook: 0.3
-})
-    .setPin('.geese-navigation', { pushFollowers: false })
-    .addTo(geeseController);*/
-
 const headerParallax = new ScrollMagic.Scene(
     {
         triggerElement: '.geese-header',
@@ -49,3 +42,12 @@ $('.geese-image-container').each((k, container) => {
         alternatingDirection = alternatingDirection / -1;
     }
 });
+
+
+
+const headerPin = new ScrollMagic.Scene({
+    triggerElement: '.geese-navigation',
+    triggerHook: 0
+})
+    .setPin('.geese-navigation', { pushFollowers: false })
+    .addTo(geeseController);

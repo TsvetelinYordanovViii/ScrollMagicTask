@@ -4,6 +4,28 @@ body {
     margin: 0;
 }
 
+.geese-navigation {
+    z-index: 1;
+    height: 5rem;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0 4rem;
+    font-family: 'Bricolage Grotesque', sans-serif;
+
+    .geese-nav-button {
+        border-radius: 25%;
+        border-style: none;
+        font-size: 2rem;
+        margin-left: 1rem;
+        background-color: gold;
+        cursor: pointer;
+    }
+}
+
 .geese-header {
     position: relative;
     height: 80vh;
@@ -11,11 +33,10 @@ body {
     font-size: 2.5rem;
     overflow: hidden;
 
-
     .header-background {
         position: absolute;
         width: 100%;
-        height: 300%;
+        height: 200%;
         background: url('Images/greylag-goose-63088_1280.jpg') no-repeat;
         background-size: cover;
     }
