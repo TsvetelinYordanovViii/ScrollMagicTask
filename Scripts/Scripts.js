@@ -207,3 +207,14 @@ $('.play-navbar-animation').click(() => {
         $('.play-navbar-animation').text('Revert navigation bar animation');
     }
 })
+
+navBarAnimationResetScrollTrigger = new ScrollMagic.Scene({
+    triggerElement: '.geese-images',
+    triggerHook: 0,
+    duration: 100
+}).on('start', () => {
+    navigationColor.triggerElement('.geese-images');
+    navigationButtonMovement.triggerElement('.geese-images');
+    navBarAnimationReset = false;
+    $('.play-navbar-animation').text('Revert navigation bar animation');
+}).addTo(controller);
