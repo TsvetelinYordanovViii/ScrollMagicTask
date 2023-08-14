@@ -190,3 +190,20 @@ const carousel = new ScrollMagic.Scene(
     .setPin('.gallery-carousel', { pushFollowers: true })
     .setTween(slideInImages)
     .addTo(controller);
+
+
+let navBarAnimationReset = false;
+$('.play-navbar-animation').click(() => {
+    if (!navBarAnimationReset) {
+        navigationColor.triggerElement('.navbar-animation-control');
+        navigationButtonMovement.triggerElement('.navbar-animation-control');
+        navBarAnimationReset = true;
+        $('.play-navbar-animation').text('Play navigation bar animation');
+    }
+    else {
+        navigationColor.triggerElement('.geese-images');
+        navigationButtonMovement.triggerElement('.geese-images');
+        navBarAnimationReset = false;
+        $('.play-navbar-animation').text('Revert navigation bar animation');
+    }
+})

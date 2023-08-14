@@ -155,4 +155,19 @@ body {
     align-items: center;
     justify-content: center;
     height: 10rem;
+
+    .play-navbar-animation {
+        padding: 1rem;
+        border-radius: 50%;
+        border: none;
+        background-color: skyblue;
+        font-size: 2rem;
+        width: 40rem;
+        cursor: pointer;
+        transition: background-color .25s;
+
+        &:hover {
+            background-color: slateblue;
+        }
+    }
 }
