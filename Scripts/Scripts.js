@@ -13,12 +13,19 @@ const headerParallax = new ScrollMagic.Scene(
 let alternatingDirection = 1;
 let verticalOrHorizontalDirection = 0;
 $('.geese-image-container').each((k, container) => {
+    //Found an issue for images that slide down. If you put the scroll
+    //at a specific location, the image will start to slide up and down.
+    //I think this is because the start hook is moving downwards and below
+    //the trigger hook, meaning the image is triggered, moves and then it is
+    //triggered again when the start hook moves through the trigger.
+    //The solution is to simply add a stationary object that doesn't move during animation
+    //or to apply the animation to the image object itself, which I just did.
     if (verticalOrHorizontalDirection === 0) {
         new ScrollMagic.Scene({
             triggerElement: container,
             triggerHook: .8,
         })
-            .setTween(TweenMax.from(container, 1, {
+            .setTween(TweenMax.from('.' + container.classList + `:nth-child(${k + 1}) img`, 1, {
                 x: (alternatingDirection * (-15)) + '%',
                 opacity: 0,
                 ease: Power0.ease
@@ -30,7 +37,7 @@ $('.geese-image-container').each((k, container) => {
             triggerElement: container,
             triggerHook: .8,
         })
-            .setTween(TweenMax.from(container, 1, {
+            .setTween(TweenMax.from('.' + container.classList + `:nth-child(${k + 1}) img`, 1, {
                 y: alternatingDirection * (-15) + '%',
                 opacity: 0,
                 ease: Power0.ease
