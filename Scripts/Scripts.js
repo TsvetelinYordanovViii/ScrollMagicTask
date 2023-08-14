@@ -116,16 +116,18 @@ const textAnimationTweenHeader = new TimelineMax().to(
 )
 
 const geeseText = new ScrollMagic.Scene({
-    triggerElement: '.geese-text',
-    triggerHook: .5
+    triggerElement: '.site-description',
+    triggerHook: .5,
+    reverse: true
 })
     .setTween(textAnimationTweenParagraph)
     .addTo(controller);
 
 
 const geeseTextHeader = new ScrollMagic.Scene({
-    triggerElement: '.geese-text',
-    triggerHook: .5
+    triggerElement: '.site-description',
+    triggerHook: .5,
+    reverse: true
 })
     .setTween(textAnimationTweenHeader)
     .addTo(controller);
@@ -152,21 +154,21 @@ const slideInImages = new TimelineMax().to(
     '.carousel-image:nth-child(2)',
     1,
     {
-        x: '-175.05%',
+        x: '-143.755%',
         ease: Power0.easeNone
     }
 ).to(
     '.carousel-image:nth-child(3)',
     1,
     {
-        x: '-175.05%',
+        x: '-143.755%',
         ease: Power0.easeNone
     }
 ).to(
     '.carousel-image:nth-child(4)',
     1,
     {
-        x: '-175.05%',
+        x: '-143.755%',
         ease: Power0.easeNone
     }
 )

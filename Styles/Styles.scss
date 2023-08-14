@@ -136,7 +136,7 @@ body {
         width: 80%;
         height: 80%;
 
-        left: 150%;
+        left: 125%;
 
         img {
             width: 100%;
@@ -148,4 +148,11 @@ body {
         left: 10%
     }
 
+}
+
+.navbar-animation-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
 }
