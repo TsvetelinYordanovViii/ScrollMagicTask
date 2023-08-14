@@ -45,7 +45,7 @@ $('.geese-image-container').each((k, container) => {
 
 
 
-const headerPin = new ScrollMagic.Scene({
+const navigationPin = new ScrollMagic.Scene({
     triggerElement: '.geese-navigation',
     triggerHook: 0
 })
