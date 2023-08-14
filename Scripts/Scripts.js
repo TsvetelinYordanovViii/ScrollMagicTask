@@ -77,3 +77,17 @@ navigationPin = new ScrollMagic.Scene({
             x: '10%'
         })
     .addTo(geeseController);
+
+
+const geeseText = new ScrollMagic.Scene({
+    triggerElement: '.geese-text',
+    triggerHook: .5
+})
+    .setTween(
+        '.geese-paragraph',
+        1,
+        {
+            backgroundSize: '0rem'
+        })
+    .addIndicators()
+    .addTo(geeseController);
