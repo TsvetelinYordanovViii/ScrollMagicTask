@@ -7,7 +7,6 @@ const headerParallax = new ScrollMagic.Scene(
         duration: '100%'
     })
     .setTween(TweenMax.from('.header-background', 1, { y: '-25%', ease: Power0.easeNone }))
-    .addIndicators()
     .addTo(geeseController);
 
 
@@ -45,9 +44,36 @@ $('.geese-image-container').each((k, container) => {
 
 
 
-const navigationPin = new ScrollMagic.Scene({
+let navigationPin = new ScrollMagic.Scene({
     triggerElement: '.geese-navigation',
     triggerHook: 0
 })
     .setPin('.geese-navigation', { pushFollowers: false })
+    .addTo(geeseController);
+
+
+navigationPin = new ScrollMagic.Scene({
+    triggerElement: '.geese-images',
+    triggerHook: 0
+})
+    .setTween(
+        '.geese-navigation',
+        1,
+        {
+            backgroundColor: 'cyan',
+            height: '3.5rem'
+        })
+    .addTo(geeseController);
+
+
+navigationPin = new ScrollMagic.Scene({
+    triggerElement: '.geese-images',
+    triggerHook: 0
+})
+    .setTween(
+        '.geese-nav-button',
+        1,
+        {
+            x: '10%'
+        })
     .addTo(geeseController);
