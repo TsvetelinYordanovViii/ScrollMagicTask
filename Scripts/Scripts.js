@@ -41,7 +41,7 @@ $('.geese-image-container').each((k, container) => {
 });
 
 
-let navigationPin = new ScrollMagic.Scene({
+const navigationPin = new ScrollMagic.Scene({
     triggerElement: '.navigation-bar',
     triggerHook: 0
 })
@@ -49,7 +49,7 @@ let navigationPin = new ScrollMagic.Scene({
     .addTo(controller);
 
 
-navigationPin = new ScrollMagic.Scene({
+const navigationColor = new ScrollMagic.Scene({
     triggerElement: '.geese-images',
     triggerHook: 0
 })
@@ -63,7 +63,7 @@ navigationPin = new ScrollMagic.Scene({
     .addTo(controller);
 
 
-navigationPin = new ScrollMagic.Scene({
+const navigationButtonMovement = new ScrollMagic.Scene({
     triggerElement: '.geese-images',
     triggerHook: 0
 })
@@ -115,7 +115,7 @@ const textAnimationTweenHeader = new TimelineMax().to(
     }
 )
 
-let geeseText = new ScrollMagic.Scene({
+const geeseText = new ScrollMagic.Scene({
     triggerElement: '.geese-text',
     triggerHook: .5
 })
@@ -123,7 +123,7 @@ let geeseText = new ScrollMagic.Scene({
     .addTo(controller);
 
 
-geeseText = new ScrollMagic.Scene({
+const geeseTextHeader = new ScrollMagic.Scene({
     triggerElement: '.geese-text',
     triggerHook: .5
 })
@@ -132,7 +132,7 @@ geeseText = new ScrollMagic.Scene({
 
 
 
-const scalingGoose = new ScrollMagic.Scene(
+const growingGoose = new ScrollMagic.Scene(
     {
         triggerElement: '.goose-boxes',
         triggerHook: .8,
@@ -145,5 +145,46 @@ const scalingGoose = new ScrollMagic.Scene(
             height: '15%',
             ease: Power0.easeNone
         }))
-    .addIndicators()
+    .addTo(controller);
+
+
+const slideInImages = new TimelineMax().to(
+    '.carousel-image:nth-child(1)',
+    1,
+    {
+        x: '100%',
+        ease: Power0.easeNone
+    }
+).to(
+    '.carousel-image:nth-child(2)',
+    1,
+    {
+        x: '100%',
+        ease: Power0.easeNone
+    }
+).to(
+    '.carousel-image:nth-child(3)',
+    1,
+    {
+        x: '100%',
+        ease: Power0.easeNone
+    }
+).to(
+    '.carousel-image:nth-child(4)',
+    1,
+    {
+        x: '100%',
+        ease: Power0.easeNone
+    }
+)
+
+
+const carousel = new ScrollMagic.Scene(
+    {
+        triggerElement: '.gallery-carousel',
+        triggerHook: 0,
+        duration: '200%',
+    })
+    .setPin('.navigation-bar', { pushFollowers: true })
+    .setTween(slideInImages)
     .addTo(controller);
