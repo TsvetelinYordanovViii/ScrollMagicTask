@@ -1,5 +1,9 @@
 const controller = new ScrollMagic.Controller();
 
+//-------------------------------------------------------
+//Header parallax
+//-------------------------------------------------------
+
 const headerParallax = new ScrollMagic.Scene(
     {
         triggerElement: '.site-header',
@@ -9,6 +13,9 @@ const headerParallax = new ScrollMagic.Scene(
     .setTween(TweenMax.from('.site-header-background', 1, { y: '-25%', ease: Power0.easeNone }))
     .addTo(controller);
 
+//-------------------------------------------------------
+//Content images
+//-------------------------------------------------------
 
 let alternatingDirection = 1;
 let verticalOrHorizontalDirection = 0;
@@ -47,6 +54,9 @@ $('.geese-image-container').each((k, container) => {
     }
 });
 
+//-------------------------------------------------------
+//Navigation bar
+//-------------------------------------------------------
 
 const navigationPin = new ScrollMagic.Scene({
     triggerElement: '.navigation-bar',
@@ -82,6 +92,10 @@ const navigationButtonMovement = new ScrollMagic.Scene({
         })
     .addTo(controller);
 
+
+//-------------------------------------------------------
+//Text section
+//-------------------------------------------------------
 
 const textAnimationTweenParagraph = new TimelineMax().to(
     '.site-description-paragraph .reveal',
@@ -139,6 +153,9 @@ const geeseTextHeader = new ScrollMagic.Scene({
     .setTween(textAnimationTweenHeader)
     .addTo(controller);
 
+//-------------------------------------------------------
+//Growing box segment
+//-------------------------------------------------------
 
 
 const growingGoose = new ScrollMagic.Scene(
@@ -155,6 +172,11 @@ const growingGoose = new ScrollMagic.Scene(
             ease: Power0.easeNone
         }))
     .addTo(controller);
+
+
+//-------------------------------------------------------
+//Carousel
+//-------------------------------------------------------
 
 
 const slideInImages = new TimelineMax().to(
@@ -190,6 +212,10 @@ const carousel = new ScrollMagic.Scene(
     .setPin('.gallery-carousel', { pushFollowers: true })
     .setTween(slideInImages)
     .addTo(controller);
+
+//-------------------------------------------------------
+//Navbar animation reset button.
+//-------------------------------------------------------
 
 
 let navBarAnimationReset = false;
