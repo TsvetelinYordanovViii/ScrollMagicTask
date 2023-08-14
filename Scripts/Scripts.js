@@ -17,7 +17,6 @@ $('.geese-image-container').each((k, container) => {
         new ScrollMagic.Scene({
             triggerElement: container,
             triggerHook: .8,
-            duration: '100%'
         })
             .setTween(TweenMax.from(container, 1, {
                 x: (alternatingDirection * (-15)) + '%',
@@ -30,7 +29,6 @@ $('.geese-image-container').each((k, container) => {
         new ScrollMagic.Scene({
             triggerElement: container,
             triggerHook: .8,
-            duration: '100%'
         })
             .setTween(TweenMax.from(container, 1, {
                 y: alternatingDirection * (-15) + '%',
@@ -126,9 +124,27 @@ let geeseText = new ScrollMagic.Scene({
     .addTo(geeseController);
 
 
-let geeseHeader = new ScrollMagic.Scene({
+geeseText = new ScrollMagic.Scene({
     triggerElement: '.geese-text',
     triggerHook: .5
 })
     .setTween(textAnimationTweenHeader)
+    .addTo(geeseController);
+
+
+
+const scalingGoose = new ScrollMagic.Scene(
+    {
+        triggerElement: '.goose-boxes',
+        triggerHook: .8,
+        offset: 300,
+        duration: '50%',
+    })
+    .setTween(TweenMax.from('.goose-box', 1,
+        {
+            width: '10%',
+            height: '15%',
+            ease: Power0.easeNone
+        }))
+    .addIndicators()
     .addTo(geeseController);
