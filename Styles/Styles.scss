@@ -62,9 +62,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
 
-
-    box-sizing: border-box;
-
     .geese-image-container {
         width: 27.5%;
         height: 27.5%;
@@ -81,7 +78,7 @@ body {
 }
 
 .geese-text {
-    margin: 0rem 16rem 90rem;
+    margin: 0rem 16rem;
     text-align: center;
     color: $backgroundColor;
 
@@ -93,15 +90,31 @@ body {
     When changing the background image's width and with repeat set to none,
     the background image will cover the text letter by letter.*/
 
-    .cover {
-        background-image: linear-gradient($backgroundColor, $backgroundColor);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-    }
-
+    /*By setting the text color to the background color and the span's background color to something else,
+    we can create an animation where the text is revealed from left to right, row by row by changing the background image's width.
+    Unfortunately due to the fact that a gradient is used, I cannot easily animate the background color to something else.*/
     .reveal {
         background-image: linear-gradient(skyblue, skyblue);
         background-size: 0% 100%;
         background-repeat: no-repeat;
+    }
+}
+
+.goose-boxes {
+    position: relative;
+    height: 60vh;
+
+    .goose-box {
+        position: absolute;
+        left: 30rem;
+        top: 5rem;
+        width: 20rem;
+        height: 10rem;
+        object-fit: contain;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
     }
 }
